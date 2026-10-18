@@ -4,7 +4,9 @@ Página web de recetas de cocina españolas y caseras: **La Alacena**.
 
 Web de recetas españolas caseras: inicio con recetas destacadas, categorías (entrantes, platos principales, postres y vegetariano), página de cada receta con ingredientes ajustables por raciones y pasos numerados, buscador y contacto.
 
-Es una página estática: abre `index.html` en el navegador o publícala con GitHub Pages (Settings → Pages → rama `main`, carpeta raíz).
+Web publicada: https://bruceweyne07.github.io/
+
+Es una página estática: se publica con GitHub Pages desde la rama `main`, carpeta raíz. También se puede abrir `index.html` directamente en el navegador.
 
 ## Estructura
 
