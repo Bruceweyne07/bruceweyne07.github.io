@@ -571,6 +571,17 @@ const RECETAS = [
     'Sírvelos calientes, en cazuelita y con pan.'],
   truco:'No llenes demasiado la sartén: si los champiñones se amontonan, se cuecen en su jugo en lugar de dorarse. Si hace falta, hazlos en dos tandas.' },
 
+{ id:'berenjenas-fritas-con-miel', nombre:'Berenjenas fritas con miel', cats:['entrantes','vegetariano'], region:'Andalucía', prep:15, coc:15, rac:4, dif:'Fácil', extra:'Las berenjenas reposan 30 minutos en leche antes de freírlas.',
+  desc:'Bastones de berenjena enharinados y fritos, crujientes por fuera y tiernos por dentro, con un hilo de miel de caña por encima. Tapa clásica de Córdoba y Málaga.',
+  ingr:[{q:2,u:'ud',n:'berenjenas',n1:'berenjena'},{q:500,u:'ml',n:'leche para el remojo'},{q:150,u:'g',n:'harina de trigo'},{q:500,u:'ml',n:'aceite de oliva para freír'},{q:60,u:'ml',n:'miel de caña',nota:'o miel de flores'},{n:'Sal en escamas',nota:'al gusto'}],
+  pasos:['Lava las berenjenas y córtalas sin pelar en bastones de 1 cm de grosor, o en rodajas finas si lo prefieres.',
+    'Ponlas en remojo en la leche con una pizca de sal durante 30 minutos. Así pierden el amargor y quedan más jugosas.',
+    'Escúrrelas bien y pásalas por harina, sacudiendo el exceso.',
+    'Calienta el aceite en una sartén honda a 180 °C y fríe las berenjenas en tandas pequeñas, de 2 a 3 minutos, hasta que estén doradas y crujientes.',
+    'Escúrrelas sobre papel absorbente y espolvorea un poco de sal en escamas.',
+    'Sírvelas enseguida, con un hilo de miel de caña por encima.'],
+  truco:'Pon la miel justo antes de servir: si la añades antes, las berenjenas pierden el crujiente. El contraste entre la sal y la miel es la gracia de esta tapa.' },
+
 { id:'albondigas-en-salsa', nombre:'Albóndigas en salsa', cats:['principales'], region:'Toda España', prep:25, coc:40, rac:4, dif:'Media',
   desc:'Albóndigas tiernas de ternera y cerdo en salsa de tomate casera, como las de las abuelas. Al día siguiente están aún mejor.',
   ingr:[{q:300,u:'g',n:'carne picada de ternera'},{q:200,u:'g',n:'carne picada de cerdo'},{q:1,u:'ud',n:'huevos',n1:'huevo'},{q:30,u:'g',n:'pan del día anterior'},{q:50,u:'ml',n:'leche'},{q:2,u:'diente',n:'ajo'},{n:'Perejil fresco picado',nota:'un puñado'},{q:50,u:'g',n:'harina de trigo para rebozar'},{q:1,u:'ud',n:'cebollas',n1:'cebolla'},{q:400,u:'g',n:'tomate triturado'},{q:100,u:'ml',n:'vino blanco'},{q:200,u:'ml',n:'caldo de carne o agua'},{q:100,u:'ml',n:'aceite de oliva'},{n:'Sal y pimienta',nota:'al gusto'}],
@@ -670,6 +681,12 @@ const byId = Object.fromEntries(RECETAS.map(r=>[r.id,r]));
 // Fotos de Pexels (licencia de Pexels: uso gratuito, sin atribución obligatoria), publicadas junto a la página en fotos/
 const PEXELS = {'tortilla-de-patatas':20934174,'paella-valenciana':24906297,'gazpacho-andaluz':16698356,'croquetas-de-jamon':21327952,'pimientos-de-padron':38681379,'pan-con-tomate':3793871,'pulpo-a-la-gallega':36393691,'fabada-asturiana':19870150,'pisto-manchego':16699418,'espinacas-con-garbanzos':12765333,'escalivada':9433006,'crema-catalana':36101016,'arroz-con-leche':37825038,'torrijas':10066118,'flan-de-huevo':14665242,'tarta-de-santiago':9074543,
   'patatas-bravas':28490824,'gambas-al-ajillo':16273761,'salmorejo-cordobes':12675815,'ensaladilla-rusa':21625304,'champinones-al-ajillo':5718131,'albondigas-en-salsa':14009277,'lentejas-con-verduras':35646479,'pollo-guisado-con-patatas':35156470,'huevos-rotos':27905915,'berenjenas-rellenas':5864347,'churros-con-chocolate':6310077,'tarta-de-queso-vasca':6168429,'magdalenas':18732595};
+// Fotos de Unsplash (licencia de Unsplash: uso gratuito, con crédito recomendado)
+const UNSPLASH = {'berenjenas-fritas-con-miel':['UUH57Jkc6F0','T (@tanyabarrow)']};
+function credito(r){
+  if(UNSPLASH[r.id])return `Foto de ${esc(UNSPLASH[r.id][1])} en <a href="https://unsplash.com/photos/${UNSPLASH[r.id][0]}" target="_blank" rel="noopener">Unsplash</a>.`;
+  return `Foto de <a href="https://www.pexels.com/photo/${PEXELS[r.id]}/" target="_blank" rel="noopener">Pexels</a>.`;
+}
 const mias={};
 RECETAS.forEach(r=>{try{const u=localStorage.getItem('alacena-foto-'+r.id);if(u)mias[r.id]=u}catch(e){}});
 function foto(r,k){if(mias[r.id])return mias[r.id];return `fotos/${r.id}${k==='det'||k==='hero'?'':'-p'}.jpg`}
@@ -813,7 +830,7 @@ function vReceta(r){
     ${r.extra?`<p class="aviso">${esc(r.extra)}</p>`:''}
     <figure class="r-foto">
       <img src="${propia?mias[r.id]:foto(r,'det')}" alt="${esc(r.nombre)}${propia?', foto subida por ti':''}" width="1400" height="933" fetchpriority="high" decoding="async">
-      <figcaption><span>${propia?'Tu foto de este plato. Se guarda solo en este navegador.':`Foto de <a href="https://www.pexels.com/photo/${PEXELS[r.id]}/" target="_blank" rel="noopener">Pexels</a>. Puedes poner tu propia foto.`}</span>
+      <figcaption><span>${propia?'Tu foto de este plato. Se guarda solo en este navegador.':`${credito(r)} Puedes poner tu propia foto.`}</span>
         <span class="botones"><label class="btn btn-sec btn-peq" for="subir">${propia?'Cambiar foto':'Subir mi foto'}</label><input class="oculto" type="file" id="subir" accept="image/*">${propia?'<button type="button" class="btn btn-sec btn-peq" data-acc="foto-quitar">Quitar mi foto</button>':''}</span>
       </figcaption>
     </figure>

@@ -2,7 +2,7 @@
 
 Página web de recetas de cocina españolas y caseras: **La Alacena**.
 
-Web de recetas españolas caseras: inicio con recetas destacadas, categorías (entrantes, platos principales, postres y vegetariano), página de cada receta con ingredientes ajustables por raciones y pasos numerados, buscador, sección «Sobre mí» y contacto. Tiene 29 recetas.
+Web de recetas españolas caseras: inicio con recetas destacadas, categorías (entrantes, platos principales, postres y vegetariano), página de cada receta con ingredientes ajustables por raciones y pasos numerados, buscador, sección «Sobre mí» y contacto. Tiene 30 recetas.
 
 Web publicada: https://bruceweyne07.github.io/
 
@@ -15,7 +15,7 @@ Es una página estática: se publica con GitHub Pages desde la rama `main`, carp
 
 ## Fotos
 
-Las fotos son de [Pexels](https://www.pexels.com) y se usan bajo la [licencia de Pexels](https://www.pexels.com/license/), que permite el uso gratuito sin atribución obligatoria. Cada receta enlaza a su foto original.
+Las fotos son de [Pexels](https://www.pexels.com) y se usan bajo la [licencia de Pexels](https://www.pexels.com/license/), que permite el uso gratuito sin atribución obligatoria. La foto de las berenjenas fritas con miel es de [Unsplash](https://unsplash.com/photos/UUH57Jkc6F0) y se usa bajo la [licencia de Unsplash](https://unsplash.com/license), también gratuita. Cada receta enlaza a su foto original.
 
 ## Formulario de contacto
 
