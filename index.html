@@ -615,16 +615,17 @@ const RECETAS = [
     'Pon las patatas y los pimientos en una fuente, coloca los huevos encima y rómpelos con un tenedor en la mesa para que la yema empape las patatas.'],
   truco:'Si comes carne, la versión de bar lleva jamón serrano o chistorra por encima. Añádelos al final, junto con los huevos.' },
 
-{ id:'berenjenas-rellenas', nombre:'Berenjenas rellenas de verduras', cats:['principales','vegetariano'], region:'Toda España', prep:20, coc:45, rac:4, dif:'Fácil',
-  desc:'Berenjenas asadas y rellenas de su propia pulpa, salteada con pimientos, calabacín, cebolla y tomate.',
-  ingr:[{q:2,u:'ud',n:'berenjenas',n1:'berenjena'},{q:1,u:'ud',n:'calabacines',n1:'calabacín'},{q:1,u:'ud',n:'pimientos rojos',n1:'pimiento rojo'},{q:1,u:'ud',n:'pimientos amarillos',n1:'pimiento amarillo'},{q:1,u:'ud',n:'cebollas',n1:'cebolla'},{q:2,u:'diente',n:'ajo'},{q:200,u:'g',n:'tomate triturado'},{q:60,u:'ml',n:'aceite de oliva virgen extra'},{q:1,u:'cdta',n:'orégano seco'},{n:'Sal y pimienta',nota:'al gusto'}],
+{ id:'berenjenas-rellenas', nombre:'Berenjenas rellenas gratinadas', cats:['principales','vegetariano'], region:'Toda España', prep:25, coc:50, rac:4, dif:'Media',
+  desc:'Berenjenas asadas y rellenas de su pulpa con pimiento, cebolla y tomate, cubiertas de bechamel y queso y gratinadas al horno, como se hacen en casa.',
+  ingr:[{q:2,u:'ud',n:'berenjenas grandes',n1:'berenjena grande'},{q:1,u:'ud',n:'cebollas',n1:'cebolla'},{q:1,u:'ud',n:'pimientos rojos',n1:'pimiento rojo'},{q:1,u:'ud',n:'pimientos verdes',n1:'pimiento verde'},{q:2,u:'diente',n:'ajo'},{q:200,u:'g',n:'tomate triturado'},{q:60,u:'ml',n:'aceite de oliva virgen extra'},{q:30,u:'g',n:'mantequilla'},{q:30,u:'g',n:'harina de trigo'},{q:400,u:'ml',n:'leche entera'},{n:'Nuez moscada',nota:'una pizca'},{q:80,u:'g',n:'queso rallado para gratinar'},{n:'Sal y pimienta',nota:'al gusto'}],
   pasos:['Precalienta el horno a 200 °C. Parte las berenjenas por la mitad a lo largo y haz cortes en cuadrícula en la pulpa, sin llegar a la piel.',
     'Riégalas con un poco de aceite, sálalas y ásalas boca arriba 25 minutos, hasta que la pulpa esté tierna.',
-    'Mientras tanto, pica la cebolla, el ajo, los pimientos y el calabacín en dados pequeños.',
-    'Pocha la cebolla y el ajo en una sartén con el resto del aceite durante 5 minutos. Añade los pimientos y el calabacín y cocina 10 minutos a fuego medio.',
-    'Vacía las berenjenas con una cuchara, dejando un borde de 1 cm. Pica la pulpa y añádela a la sartén con el tomate y el orégano. Cocina 5 minutos y salpimienta.',
-    'Rellena las berenjenas, colócalas en una fuente y hornéalas 15 minutos más. Sírvelas calientes.'],
-  truco:'Para gratinarlas, cubre el relleno con queso rallado antes del último horneado. Siguen siendo vegetarianas, aunque ya no veganas.' },
+    'Mientras tanto, pica la cebolla, el ajo y los pimientos en dados pequeños y póchalos en una sartén con el resto del aceite durante 10 minutos a fuego medio.',
+    'Vacía las berenjenas con una cuchara, dejando un borde de 1 cm. Pica la pulpa y añádela a la sartén con el tomate. Cocina 10 minutos, hasta que el relleno quede jugoso pero sin caldo, y salpimienta.',
+    'Prepara una bechamel espesa: funde la mantequilla, tuesta la harina 2 minutos y añade la leche caliente poco a poco, removiendo con varillas. Cocina 5 minutos y sazona con sal y nuez moscada.',
+    'Rellena las berenjenas, colócalas en una bandeja y cúbrelas con la bechamel y el queso rallado.',
+    'Gratínalas en la parte alta del horno de 10 a 15 minutos, hasta que la superficie esté dorada. Déjalas reposar 5 minutos antes de servir.'],
+  truco:'Si comes carne, la versión más habitual en España lleva carne picada en el relleno: dórala antes de añadir la pulpa. El resto de la receta es igual.' },
 
 { id:'churros-con-chocolate', nombre:'Churros con chocolate', cats:['postres'], region:'Madrid', prep:15, coc:20, rac:4, dif:'Media',
   desc:'Masa de harina, agua y sal frita en aceite bien caliente, con chocolate espeso para mojar. El desayuno de los domingos y de las mañanas de Año Nuevo.',
@@ -668,7 +669,7 @@ const byId = Object.fromEntries(RECETAS.map(r=>[r.id,r]));
 /* ---------- Fotos ---------- */
 // Fotos de Pexels (licencia de Pexels: uso gratuito, sin atribución obligatoria), publicadas junto a la página en fotos/
 const PEXELS = {'tortilla-de-patatas':20934174,'paella-valenciana':24906297,'gazpacho-andaluz':16698356,'croquetas-de-jamon':21327952,'pimientos-de-padron':38681379,'pan-con-tomate':3793871,'pulpo-a-la-gallega':36393691,'fabada-asturiana':19870150,'pisto-manchego':16699418,'espinacas-con-garbanzos':12765333,'escalivada':9433006,'crema-catalana':36101016,'arroz-con-leche':37825038,'torrijas':10066118,'flan-de-huevo':14665242,'tarta-de-santiago':9074543,
-  'patatas-bravas':28490824,'gambas-al-ajillo':16273761,'salmorejo-cordobes':12675815,'ensaladilla-rusa':21625304,'champinones-al-ajillo':5718131,'albondigas-en-salsa':36958915,'lentejas-con-verduras':35646479,'pollo-guisado-con-patatas':35156470,'huevos-rotos':27905915,'berenjenas-rellenas':15735622,'churros-con-chocolate':6310077,'tarta-de-queso-vasca':6168429,'magdalenas':18732595};
+  'patatas-bravas':28490824,'gambas-al-ajillo':16273761,'salmorejo-cordobes':12675815,'ensaladilla-rusa':21625304,'champinones-al-ajillo':5718131,'albondigas-en-salsa':14009277,'lentejas-con-verduras':35646479,'pollo-guisado-con-patatas':35156470,'huevos-rotos':27905915,'berenjenas-rellenas':5864347,'churros-con-chocolate':6310077,'tarta-de-queso-vasca':6168429,'magdalenas':18732595};
 const mias={};
 RECETAS.forEach(r=>{try{const u=localStorage.getItem('alacena-foto-'+r.id);if(u)mias[r.id]=u}catch(e){}});
 function foto(r,k){if(mias[r.id])return mias[r.id];return `fotos/${r.id}${k==='det'||k==='hero'?'':'-p'}.jpg`}
