@@ -3,11 +3,22 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Recetas españolas caseras con ingredientes, pasos y tiempos.">
-<title>La Alacena</title>
+<meta name="description" content="Recetas españolas caseras explicadas paso a paso: entrantes, platos principales, postres y recetas vegetarianas, con ingredientes, tiempos y fotos.">
+<title>La Alacena · Recetas españolas caseras</title>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5249980482514404"
      crossorigin="anonymous"></script>
-<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="canonical" href="https://bruceweyne07.github.io/">
+<meta name="theme-color" content="#fbf6ee">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_ES">
+<meta property="og:site_name" content="La Alacena">
+<meta property="og:title" content="La Alacena · Recetas españolas caseras">
+<meta property="og:description" content="Recetas españolas de toda la vida, con cantidades exactas, tiempos reales y pasos numerados.">
+<meta property="og:url" content="https://bruceweyne07.github.io/">
+<meta property="og:image" content="https://bruceweyne07.github.io/fotos/paella-valenciana.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'%3E%3Crect width='28' height='28' rx='5' fill='%23fffaf3'/%3E%3Ccircle cx='0' cy='0' r='9' fill='%23d9774f'/%3E%3Ccircle cx='28' cy='0' r='9' fill='%23d9774f'/%3E%3Ccircle cx='0' cy='28' r='9' fill='%23d9774f'/%3E%3Ccircle cx='28' cy='28' r='9' fill='%23d9774f'/%3E%3Cpath d='M14 5 23 14 14 23 5 14Z' fill='%23efc06a'/%3E%3C/svg%3E">
+<link rel="preload" as="image" href="fotos/tortilla-de-patatas.jpg" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Figtree:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap">
@@ -47,7 +58,7 @@ button,input,select,textarea{font:inherit;color:inherit}
 .nav a{padding:8px 13px;border-radius:999px;text-decoration:none;font-weight:500;color:var(--muted);white-space:nowrap}
 .nav a:hover{color:var(--ink)}
 .nav a[aria-current="page"]{color:var(--ink);background:var(--sunk)}
-.buscador{position:relative;width:340px;max-width:100%}
+.buscador{position:relative;width:clamp(220px,28vw,340px);max-width:100%}
 .buscador svg{position:absolute;left:14px;top:50%;transform:translateY(-50%);width:18px;height:18px;color:var(--muted);pointer-events:none}
 .buscador input{width:100%;height:44px;padding:0 16px 0 42px;border:1px solid var(--line);border-radius:999px;background:var(--surface)}
 .buscador input::placeholder{color:var(--muted)}
@@ -65,6 +76,11 @@ button,input,select,textarea{font:inherit;color:inherit}
   .buscador{grid-column:1/-1;width:100%}
   .nav .solo-ancho{display:none}
   .nav a{padding:8px 10px}
+}
+@media (max-width:480px){
+  .top{position:static}
+  .top-in{grid-template-columns:minmax(0,1fr);gap:10px}
+  .nav{margin-left:-10px}
 }
 
 /* Botones y chips */
@@ -92,7 +108,7 @@ button,input,select,textarea{font:inherit;color:inherit}
 .datos{display:flex;flex-wrap:wrap;gap:8px 28px;list-style:none;padding:0;margin:32px 0 0;font:400 .9rem var(--f-mono);color:var(--muted)}
 .datos b{font:400 1.5rem var(--f-display);color:var(--ink);margin-right:6px;font-variant-numeric:tabular-nums}
 .hero-foto{position:relative;margin:0}
-.hero-foto img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:10px}
+.hero-foto img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;border-radius:10px}
 .semana{position:absolute;left:16px;bottom:16px;max-width:calc(100% - 32px);background:var(--surface);color:var(--ink);border-radius:10px;padding:14px 18px;text-decoration:none;display:grid;gap:4px;box-shadow:0 8px 24px var(--sombra)}
 .semana b{font:400 1.25rem/1.2 var(--f-display)}
 .semana span{font-size:.88rem;color:var(--muted)}
@@ -136,7 +152,7 @@ button,input,select,textarea{font:inherit;color:inherit}
 .cabecera p.lead{font-size:1.1rem;color:var(--muted);max-width:60ch}
 .barra{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:14px 24px;padding-block:18px;border-block:1px solid var(--line);margin-bottom:32px}
 .barra .grupo{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
-.barra label{font:500 .74rem var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-right:4px}
+.barra label,.barra .etq{font:500 .74rem var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-right:4px}
 .barra select{height:38px;border:1px solid var(--line);border-radius:999px;background:var(--surface);padding:0 14px}
 .recuento{font:400 .88rem var(--f-mono);color:var(--muted);margin-bottom:20px}
 .vacio-lista{padding:40px 24px;text-align:center;background:var(--sunk);border-radius:10px;color:var(--muted)}
@@ -164,7 +180,7 @@ button,input,select,textarea{font:inherit;color:inherit}
 }
 .aviso{display:inline-block;font-size:.92rem;background:var(--sunk);padding:8px 14px;border-radius:8px;margin:-12px 0 24px}
 .r-foto{margin:0}
-.r-foto img{display:block;width:100%;aspect-ratio:3/2;max-height:620px;object-fit:cover;border-radius:10px;background:var(--sunk)}
+.r-foto img{display:block;width:100%;height:auto;aspect-ratio:3/2;max-height:620px;object-fit:cover;border-radius:10px;background:var(--sunk)}
 .r-foto figcaption{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px 16px;margin-top:12px;font-size:.88rem;color:var(--muted)}
 .r-foto .botones{display:flex;flex-wrap:wrap;gap:8px}
 .r-cuerpo{display:grid;grid-template-columns:minmax(0,350px) minmax(0,1fr);gap:clamp(28px,5vw,64px);padding-block:clamp(32px,5vw,56px)}
@@ -218,12 +234,28 @@ button,input,select,textarea{font:inherit;color:inherit}
 .listo h2{font-size:1.7rem}
 .listo blockquote{margin:0;padding:14px 16px;background:var(--sunk);border-radius:8px;white-space:pre-wrap;overflow-wrap:anywhere}
 
+/* Sobre mí */
+.presenta{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px 32px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:clamp(20px,3vw,32px)}
+.presenta h2{font-size:clamp(1.5rem,2.6vw,2rem);margin:6px 0 8px}
+.presenta p.muted{max-width:64ch}
+@media (max-width:700px){.presenta{grid-template-columns:minmax(0,1fr)}}
+.sobre{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:clamp(28px,6vw,72px);align-items:start;padding-block:8px clamp(40px,6vw,72px)}
+@media (max-width:860px){.sobre{grid-template-columns:minmax(0,1fr)}}
+.sobre .texto{display:grid;gap:18px;font-size:1.08rem;max-width:62ch}
+.sobre .texto h2{font-size:1.6rem;margin-top:10px}
+.claves{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+.claves li{display:grid;grid-template-columns:28px minmax(0,1fr);gap:10px;align-items:baseline}
+.claves b{font:400 1.25rem var(--f-display);color:var(--cobalt)}
+.mosaico{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:0}
+.mosaico img{display:block;width:100%;height:auto;aspect-ratio:1;object-fit:cover;border-radius:10px;background:var(--sunk);box-shadow:0 10px 28px var(--sombra)}
+.mosaico figcaption{grid-column:1/-1;font-size:.88rem;color:var(--muted)}
+
 /* Pie */
 .pie{background:var(--sunk);margin-top:24px;border-top:1px solid var(--line)}
 .card .ph,.hero-foto img,.r-foto img{box-shadow:0 10px 28px var(--sombra)}
 .pie-in{display:grid;grid-template-columns:minmax(0,1.4fr) repeat(2,minmax(0,1fr));gap:28px;padding-block:44px 36px}
 @media (max-width:700px){.pie-in{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.pie-in > :first-child{grid-column:1/-1}}
-.pie h4{margin:0 0 10px;font:500 .74rem var(--f-mono);letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}
+.pie h2{margin:0 0 10px;font:500 .74rem var(--f-mono);letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}
 .pie ul{list-style:none;padding:0;margin:0;display:grid;gap:6px}
 .pie a{text-decoration:none}
 .pie a:hover{text-decoration:underline}
@@ -257,6 +289,7 @@ button,input,select,textarea{font:inherit;color:inherit}
     <nav class="nav" aria-label="Principal">
       <a href="#inicio" class="solo-ancho" data-nav="inicio">Inicio</a>
       <a href="#recetas" data-nav="recetas">Recetas</a>
+      <a href="#sobre-mi" data-nav="sobre-mi">Sobre mí</a>
       <a href="#contacto" data-nav="contacto">Contacto</a>
     </nav>
     <form class="buscador" id="buscador" role="search" autocomplete="off">
@@ -278,10 +311,10 @@ button,input,select,textarea{font:inherit;color:inherit}
         <svg viewBox="0 0 28 28" aria-hidden="true"><rect width="28" height="28" fill="url(#az)"/></svg>
         La Alacena
       </a>
-      <p>Recetas españolas de casa, con cantidades exactas y tiempos reales. Probadas en cocinas normales, con fogones normales.</p>
+      <p>Recetas españolas de casa, con cantidades exactas y tiempos reales, pensadas para cocinar con los utensilios de siempre.</p>
     </div>
     <div>
-      <h4>Categorías</h4>
+      <h2>Categorías</h2>
       <ul>
         <li><a href="#entrantes">Entrantes</a></li>
         <li><a href="#principales">Platos principales</a></li>
@@ -290,10 +323,11 @@ button,input,select,textarea{font:inherit;color:inherit}
       </ul>
     </div>
     <div>
-      <h4>La Alacena</h4>
+      <h2>La Alacena</h2>
       <ul>
         <li><a href="#inicio">Inicio</a></li>
         <li><a href="#recetas">Todas las recetas</a></li>
+        <li><a href="#sobre-mi">Sobre mí</a></li>
         <li><a href="#contacto">Contacto</a></li>
       </ul>
     </div>
@@ -355,7 +389,7 @@ const RECETAS = [
     'Añade la leche caliente poco a poco sin dejar de remover. Cocina a fuego bajo unos 15 minutos, hasta que la masa se despegue de la sartén.',
     'Sazona con nuez moscada y sal con cuidado, porque el jamón ya es salado. Extiende la masa en una fuente, cúbrela con film a piel y déjala enfriar en la nevera.',
     'Forma las croquetas con dos cucharas o con las manos. Pásalas por huevo batido y después por pan rallado.',
-    'Fríelas en tandas pequeñas en aceite a 180 ºC hasta que estén doradas. Escúrrelas sobre papel absorbente.'],
+    'Fríelas en tandas pequeñas en aceite a 180 °C hasta que estén doradas. Escúrrelas sobre papel absorbente.'],
   truco:'Si la sartén no está llena, el aceite no se enfría y las croquetas no se abren. Fríe 4 o 5 cada vez.' },
 
 { id:'pimientos-de-padron', nombre:'Pimientos de Padrón', cats:['entrantes','vegetariano'], region:'Galicia', prep:5, coc:8, rac:4, dif:'Fácil',
@@ -423,7 +457,7 @@ const RECETAS = [
 { id:'escalivada', nombre:'Escalivada', cats:['entrantes','vegetariano'], region:'Cataluña', prep:10, coc:50, rac:4, dif:'Fácil', extra:'Se toma templada o fría, así que puede prepararse con antelación.',
   desc:'Berenjena, pimiento rojo y cebolla asados enteros, pelados a mano y aliñados con aceite y ajo.',
   ingr:[{q:2,u:'ud',n:'berenjenas',n1:'berenjena'},{q:2,u:'ud',n:'pimientos rojos',n1:'pimiento rojo'},{q:2,u:'ud',n:'cebollas',n1:'cebolla'},{q:1,u:'diente',n:'ajo'},{q:60,u:'ml',n:'aceite de oliva virgen extra'},{n:'Sal',nota:'al gusto'}],
-  pasos:['Precalienta el horno a 200 ºC. Lava las berenjenas y los pimientos; deja las cebollas enteras con su piel.',
+  pasos:['Precalienta el horno a 200 °C. Lava las berenjenas y los pimientos; deja las cebollas enteras con su piel.',
     'Colócalo todo en una bandeja, unta las verduras con un poco de aceite y hornea de 45 a 50 minutos, dándoles la vuelta a mitad. Las cebollas pueden necesitar algo más.',
     'Tapa las verduras con un paño o papel de aluminio y deja que suden 15 minutos: así se pelan con facilidad.',
     'Pélalas, retira las semillas de los pimientos y corta todo en tiras largas con las manos.',
@@ -433,8 +467,8 @@ const RECETAS = [
 { id:'crema-catalana', nombre:'Crema catalana', cats:['postres'], region:'Cataluña', prep:15, coc:15, rac:6, dif:'Media', extra:'Necesita 3 horas de nevera antes de quemar el azúcar.',
   desc:'Crema de leche y yema perfumada con canela y limón, con una costra de azúcar quemado que cruje bajo la cuchara.',
   ingr:[{q:1000,u:'ml',n:'leche entera'},{q:6,u:'ud',n:'yemas de huevo',n1:'yema de huevo'},{q:150,u:'g',n:'azúcar para la crema'},{q:60,u:'g',n:'azúcar para quemar'},{q:40,u:'g',n:'maicena'},{q:1,u:'rama',n:'canela'},{q:1,u:'ud',n:'pieles de limón',n1:'piel de limón'}],
-  pasos:['Calienta 800 ml de la leche con la canela y la piel de limón, sin la parte blanca. Cuando hierva, apaga y deja infusionar 15 minutos.',
-    'Bate las yemas con el azúcar de la crema hasta que blanqueen. Disuelve la maicena en el resto de la leche, fría, y añádela.',
+  pasos:['Reserva un vaso de leche fría y calienta el resto con la canela y la piel de limón, sin la parte blanca. Cuando hierva, apaga y deja infusionar 15 minutos.',
+    'Bate las yemas con el azúcar de la crema hasta que blanqueen. Disuelve la maicena en la leche fría que has reservado y añádela.',
     'Cuela la leche infusionada y viértela poco a poco sobre las yemas, sin dejar de batir.',
     'Pasa la mezcla al cazo y cocina a fuego bajo, removiendo sin parar con varillas, hasta que espese y cubra la cuchara. No dejes que hierva fuerte.',
     'Reparte la crema en cazuelitas de barro, deja templar y enfría en la nevera al menos 3 horas.',
@@ -455,7 +489,7 @@ const RECETAS = [
   desc:'El dulce de Semana Santa: pan empapado en leche con canela y limón, frito y rebozado en azúcar.',
   ingr:[{q:1,u:'ud',n:'barras de pan de dos días',n1:'barra de pan de dos días'},{q:750,u:'ml',n:'leche entera'},{q:150,u:'g',n:'azúcar'},{q:1,u:'rama',n:'canela'},{q:1,u:'ud',n:'pieles de limón',n1:'piel de limón'},{q:3,u:'ud',n:'huevos',n1:'huevo'},{q:500,u:'ml',n:'aceite de oliva suave para freír'},{q:1,u:'cda',n:'canela molida'}],
   pasos:['Corta el pan en rebanadas de 2 cm de grosor.',
-    'Calienta la leche con la rama de canela, la piel de limón y 100 g de azúcar. Cuando hierva, apaga y deja templar.',
+    'Calienta la leche con la rama de canela, la piel de limón y dos tercios del azúcar. Cuando hierva, apaga y deja templar.',
     'Empapa las rebanadas en la leche por ambos lados y colócalas en una fuente. Déjalas reposar 10 minutos.',
     'Pasa cada rebanada por huevo batido y fríela en aceite caliente a fuego medio hasta que esté dorada por las dos caras.',
     'Escúrrelas sobre papel absorbente y rebózalas en el resto del azúcar mezclado con la canela molida.'],
@@ -465,7 +499,7 @@ const RECETAS = [
   desc:'Flan casero al baño maría, liso y tembloroso, con caramelo oscuro que cae por los lados.',
   ingr:[{q:4,u:'ud',n:'huevos',n1:'huevo'},{q:500,u:'ml',n:'leche entera'},{q:100,u:'g',n:'azúcar para la crema'},{q:100,u:'g',n:'azúcar para el caramelo'},{q:1,u:'cdta',n:'extracto de vainilla'}],
   pasos:['Prepara el caramelo: pon el azúcar del caramelo en un cazo a fuego medio sin remover hasta que se funda y tome color ámbar. Viértelo en la flanera y repártelo por el fondo.',
-    'Precalienta el horno a 160 ºC.',
+    'Precalienta el horno a 160 °C.',
     'Bate los huevos con el azúcar de la crema y la vainilla, sin hacer espuma. Añade la leche templada y mezcla.',
     'Cuela la mezcla y viértela en la flanera sobre el caramelo.',
     'Coloca la flanera en una bandeja con agua caliente y hornea al baño maría 45 minutos, hasta que un palillo salga limpio.',
@@ -475,21 +509,166 @@ const RECETAS = [
 { id:'tarta-de-santiago', nombre:'Tarta de Santiago', cats:['postres'], region:'Galicia', prep:15, coc:35, rac:8, dif:'Fácil',
   desc:'Tarta de almendra sin harina ni mantequilla, con la cruz de Santiago dibujada en azúcar glas.',
   ingr:[{q:250,u:'g',n:'almendra molida'},{q:250,u:'g',n:'azúcar'},{q:5,u:'ud',n:'huevos',n1:'huevo'},{q:1,u:'ud',n:'ralladuras de limón',n1:'ralladura de limón'},{q:.5,u:'cdta',n:'canela molida'},{n:'Azúcar glas',nota:'para decorar'}],
-  pasos:['Precalienta el horno a 180 ºC y forra con papel un molde redondo de 22 cm.',
+  pasos:['Precalienta el horno a 180 °C y forra con papel un molde redondo de 22 cm.',
     'Bate los huevos con el azúcar hasta que la mezcla blanquee, unos 3 minutos.',
     'Añade la almendra molida, la ralladura de limón y la canela. Mezcla con una espátula con movimientos envolventes.',
     'Vierte en el molde y hornea de 30 a 35 minutos, hasta que esté dorada y un palillo salga limpio.',
     'Deja enfriar del todo. Coloca en el centro una plantilla con la cruz de Santiago, espolvorea azúcar glas y retira la plantilla con cuidado.'],
-  truco:'Con almendra marcona molida en casa queda más jugosa. Muélela con una cucharada del azúcar para que no se apelmace.' }
+  truco:'Con almendra marcona molida en casa queda más jugosa. Muélela con una cucharada del azúcar para que no se apelmace.' },
+
+{ id:'patatas-bravas', nombre:'Patatas bravas', cats:['entrantes','vegetariano'], region:'Madrid', prep:15, coc:30, rac:4, dif:'Fácil',
+  desc:'Dados de patata fritos dos veces, crujientes por fuera y tiernos por dentro, con salsa brava de pimentón picante.',
+  ingr:[{q:800,u:'g',n:'patatas'},{q:500,u:'ml',n:'aceite de oliva para freír'},{q:1,u:'cda',n:'harina de trigo'},{q:1,u:'cdta',n:'pimentón dulce'},{q:1,u:'cdta',n:'pimentón picante'},{q:250,u:'ml',n:'caldo de verduras'},{q:30,u:'ml',n:'aceite de oliva virgen extra'},{n:'Sal',nota:'al gusto'}],
+  pasos:['Pela las patatas y córtalas en dados irregulares de unos 3 cm. Lávalas y sécalas bien con un paño.',
+    'Calienta el aceite de freír en una sartén honda a fuego medio y confita las patatas de 12 a 15 minutos, hasta que estén tiernas pero sin color. Sácalas y deja que se templen.',
+    'Para la salsa, calienta el aceite de oliva virgen extra en un cazo, añade la harina y tuéstala 1 minuto sin dejar de remover.',
+    'Aparta el cazo del fuego, añade los dos pimentones y remueve rápido para que no se quemen. Incorpora el caldo poco a poco, removiendo para que no se formen grumos.',
+    'Vuelve a poner el cazo al fuego y cocina 5 minutos, hasta que la salsa espese y quede lisa. Sala al gusto.',
+    'Sube el fuego del aceite y fríe de nuevo las patatas 3 o 4 minutos, hasta que estén doradas y crujientes. Escúrrelas y sálalas.',
+    'Sirve las patatas con la salsa brava por encima, bien calientes.'],
+  truco:'La doble fritura es el secreto: la primera, suave, cuece la patata por dentro; la segunda, fuerte, la deja crujiente.' },
+
+{ id:'gambas-al-ajillo', nombre:'Gambas al ajillo', cats:['entrantes'], region:'Andalucía', prep:10, coc:5, rac:4, dif:'Fácil',
+  desc:'Gambas en cazuela de barro con aceite, ajo laminado y guindilla, servidas chisporroteando. Ten pan a mano para mojar.',
+  ingr:[{q:400,u:'g',n:'gambas peladas'},{q:4,u:'diente',n:'ajo'},{q:1,u:'ud',n:'guindillas',n1:'guindilla'},{q:100,u:'ml',n:'aceite de oliva virgen extra'},{n:'Perejil fresco picado',nota:'al gusto'},{n:'Sal',nota:'al gusto'}],
+  pasos:['Si las gambas vienen enteras, pélalas; puedes dejarles la cola. Sécalas con papel de cocina y sálalas ligeramente.',
+    'Pela los ajos y córtalos en láminas finas. Corta la guindilla en aros.',
+    'Pon el aceite y los ajos en una cazuela de barro o una sartén pequeña a fuego medio-bajo. Cuando los ajos empiecen a bailar y tomen un color dorado claro, añade la guindilla.',
+    'Sube el fuego, incorpora las gambas y cocínalas 1 o 2 minutos, dándoles la vuelta a mitad, hasta que cambien de color.',
+    'Espolvorea el perejil picado y sirve enseguida, con pan para mojar en el aceite.'],
+  truco:'Las gambas se hacen en un momento: si pasan de 2 minutos, se quedan duras. Apártalas del fuego cuando aún estén algo translúcidas en el centro; el aceite caliente termina el trabajo.' },
+
+{ id:'salmorejo-cordobes', nombre:'Salmorejo cordobés', cats:['entrantes'], region:'Andalucía', prep:15, coc:10, rac:4, dif:'Fácil', extra:'Necesita al menos 1 hora de nevera antes de servir.',
+  desc:'Crema fría y espesa de tomate, pan y aceite, con huevo duro y taquitos de jamón por encima. Más densa que el gazpacho.',
+  ingr:[{q:1000,u:'g',n:'tomates maduros'},{q:200,u:'g',n:'pan de miga densa del día anterior'},{q:1,u:'diente',n:'ajo'},{q:150,u:'ml',n:'aceite de oliva virgen extra'},{q:2,u:'ud',n:'huevos',n1:'huevo',nota:'para servir'},{q:60,u:'g',n:'jamón serrano en taquitos',nota:'para servir'},{n:'Sal',nota:'al gusto'}],
+  pasos:['Cuece los huevos 10 minutos en agua hirviendo, enfríalos en agua fría, pélalos y pícalos.',
+    'Lava los tomates, quítales el pedúnculo y trocéalos. Tritúralos bien y pasa el puré por un colador para quitar las pieles y las semillas.',
+    'Trocea el pan y déjalo en remojo en el tomate triturado durante 10 minutos.',
+    'Añade el ajo sin el germen y la sal, y tritura hasta que no quede ningún trozo de pan.',
+    'Con la batidora en marcha, añade el aceite en un hilo fino hasta que el salmorejo emulsione y quede espeso y brillante.',
+    'Enfríalo en la nevera al menos 1 hora. Sírvelo en cuencos con el huevo picado, el jamón y un chorrito de aceite.'],
+  truco:'Debe quedar tan espeso que una cuchara casi se sostenga de pie. Si queda líquido, añade más pan; si queda demasiado denso, un poco más de tomate.' },
+
+{ id:'ensaladilla-rusa', nombre:'Ensaladilla rusa', cats:['entrantes'], region:'Toda España', prep:25, coc:25, rac:6, dif:'Fácil', extra:'Queda mejor si reposa 1 hora en la nevera antes de servir.',
+  desc:'La tapa de bar por excelencia: patata, zanahoria, huevo, atún y aceitunas unidos con mayonesa casera.',
+  ingr:[{q:800,u:'g',n:'patatas'},{q:2,u:'ud',n:'zanahorias',n1:'zanahoria'},{q:3,u:'ud',n:'huevos para cocer',n1:'huevo para cocer'},{q:200,u:'g',n:'atún en aceite escurrido'},{q:80,u:'g',n:'guisantes cocidos'},{q:50,u:'g',n:'aceitunas sin hueso'},{q:1,u:'ud',n:'huevos para la mayonesa',n1:'huevo para la mayonesa'},{q:200,u:'ml',n:'aceite de girasol'},{q:1,u:'cda',n:'zumo de limón'},{n:'Sal',nota:'al gusto'}],
+  pasos:['Lava las patatas y las zanahorias y cuécelas enteras y con piel en agua con sal: unos 25 minutos las patatas y unos 15 las zanahorias, hasta que un cuchillo entre sin resistencia.',
+    'En otro cazo, cuece los huevos 10 minutos. Enfríalos en agua fría y pélalos.',
+    'Prepara la mayonesa: pon el huevo crudo, el zumo de limón, una pizca de sal y el aceite de girasol en el vaso de la batidora. Bate sin mover la batidora del fondo hasta que emulsione y después súbela poco a poco.',
+    'Pela las patatas y las zanahorias ya templadas y córtalas en dados pequeños. Pica los huevos cocidos y las aceitunas.',
+    'Mezcla en un bol las verduras, los huevos, las aceitunas, los guisantes y el atún desmenuzado. Añade la mayonesa y mezcla con suavidad para no romper la patata.',
+    'Prueba, ajusta de sal y deja reposar en la nevera. Sírvela fría, con picos o pan tostado.'],
+  truco:'Cuece las patatas con piel para que no se empapen de agua: así la ensaladilla queda cremosa y no aguada.' },
+
+{ id:'champinones-al-ajillo', nombre:'Champiñones al ajillo', cats:['entrantes','vegetariano'], region:'Toda España', prep:10, coc:10, rac:4, dif:'Fácil',
+  desc:'Champiñones salteados a fuego vivo con ajo, guindilla, un chorrito de vino blanco y perejil. Listos en veinte minutos.',
+  ingr:[{q:500,u:'g',n:'champiñones'},{q:4,u:'diente',n:'ajo'},{q:1,u:'ud',n:'guindillas',n1:'guindilla',nota:'opcional'},{q:60,u:'ml',n:'aceite de oliva virgen extra'},{q:50,u:'ml',n:'vino blanco'},{n:'Perejil fresco picado',nota:'al gusto'},{n:'Sal',nota:'al gusto'}],
+  pasos:['Limpia los champiñones con un paño húmedo o un pincel, sin dejarlos en remojo. Corta la base del tallo y, si son grandes, pártelos por la mitad.',
+    'Pela los ajos y córtalos en láminas.',
+    'Calienta el aceite en una sartén amplia a fuego fuerte y añade los champiñones en una sola capa. Saltéalos 5 o 6 minutos, hasta que suelten el agua y se doren.',
+    'Baja a fuego medio, añade el ajo y la guindilla y rehoga 1 minuto, sin que el ajo llegue a quemarse.',
+    'Vierte el vino blanco y deja que se evapore el alcohol durante 2 minutos. Sala y espolvorea el perejil.',
+    'Sírvelos calientes, en cazuelita y con pan.'],
+  truco:'No llenes demasiado la sartén: si los champiñones se amontonan, se cuecen en su jugo en lugar de dorarse. Si hace falta, hazlos en dos tandas.' },
+
+{ id:'albondigas-en-salsa', nombre:'Albóndigas en salsa', cats:['principales'], region:'Toda España', prep:25, coc:40, rac:4, dif:'Media',
+  desc:'Albóndigas tiernas de ternera y cerdo en salsa de tomate casera, como las de las abuelas. Al día siguiente están aún mejor.',
+  ingr:[{q:300,u:'g',n:'carne picada de ternera'},{q:200,u:'g',n:'carne picada de cerdo'},{q:1,u:'ud',n:'huevos',n1:'huevo'},{q:30,u:'g',n:'pan del día anterior'},{q:50,u:'ml',n:'leche'},{q:2,u:'diente',n:'ajo'},{n:'Perejil fresco picado',nota:'un puñado'},{q:50,u:'g',n:'harina de trigo para rebozar'},{q:1,u:'ud',n:'cebollas',n1:'cebolla'},{q:400,u:'g',n:'tomate triturado'},{q:100,u:'ml',n:'vino blanco'},{q:200,u:'ml',n:'caldo de carne o agua'},{q:100,u:'ml',n:'aceite de oliva'},{n:'Sal y pimienta',nota:'al gusto'}],
+  pasos:['Remoja el pan en la leche y desmígalo. Pica muy fino la mitad del ajo y el perejil.',
+    'Mezcla en un bol las dos carnes con el huevo, el pan escurrido, el ajo picado, el perejil, sal y pimienta. Amasa lo justo para que quede una masa homogénea.',
+    'Forma bolas del tamaño de una nuez, pásalas por harina y sacude el exceso.',
+    'Fríe las albóndigas por tandas en el aceite caliente hasta que estén doradas por fuera; no hace falta que se hagan por dentro. Resérvalas.',
+    'En una cazuela con 3 cucharadas de ese aceite, pocha la cebolla y el resto del ajo, picados, durante 10 minutos a fuego medio.',
+    'Añade el vino y deja que reduzca 2 minutos. Incorpora el tomate y cocina 10 minutos más.',
+    'Añade el caldo y las albóndigas, tapa y deja que se hagan a fuego suave 20 minutos, moviendo la cazuela de vez en cuando. Sírvelas con patatas fritas o arroz blanco.'],
+  truco:'No aprietes la masa al formar las bolas: cuanto menos se manipula, más tiernas quedan las albóndigas.' },
+
+{ id:'lentejas-con-verduras', nombre:'Lentejas con verduras', cats:['principales','vegetariano'], region:'Castilla y León', prep:15, coc:45, rac:4, dif:'Fácil',
+  desc:'Lentejas pardinas estofadas con verduras y un sofrito con pimentón. Un plato de cuchara completo, sin carne y con todo el sabor.',
+  ingr:[{q:300,u:'g',n:'lentejas pardinas'},{q:1,u:'ud',n:'cebollas',n1:'cebolla'},{q:1,u:'ud',n:'pimientos rojos',n1:'pimiento rojo'},{q:1,u:'ud',n:'pimientos verdes',n1:'pimiento verde'},{q:2,u:'ud',n:'zanahorias',n1:'zanahoria'},{q:1,u:'ud',n:'tomates maduros',n1:'tomate maduro'},{q:2,u:'ud',n:'patatas medianas',n1:'patata mediana'},{q:2,u:'diente',n:'ajo'},{q:1,u:'cdta',n:'pimentón dulce'},{q:1,u:'ud',n:'hojas de laurel',n1:'hoja de laurel'},{q:1200,u:'ml',n:'agua'},{q:50,u:'ml',n:'aceite de oliva virgen extra'},{n:'Sal',nota:'al gusto'}],
+  pasos:['Lava las lentejas en un colador bajo el grifo. Las pardinas no necesitan remojo.',
+    'Pica la cebolla, los pimientos y el ajo. Pela las zanahorias y córtalas en rodajas, y ralla el tomate.',
+    'Calienta el aceite en una olla a fuego medio y pocha la cebolla, los pimientos y el ajo durante 10 minutos.',
+    'Añade el tomate rallado y cocina 5 minutos. Aparta la olla del fuego, añade el pimentón, remueve unos segundos y vuelve a ponerla al fuego.',
+    'Incorpora las lentejas, la zanahoria, el laurel y el agua fría. Lleva a ebullición y baja a fuego suave.',
+    'A los 20 minutos, añade las patatas peladas y cascadas en trozos. Cuece de 20 a 25 minutos más, hasta que las lentejas estén tiernas. Sala al final y deja reposar 5 minutos antes de servir.'],
+  truco:'Casca la patata en lugar de cortarla del todo: haz un corte pequeño y termina de partirla tirando del cuchillo. Así suelta almidón y el caldo queda más espeso.' },
+
+{ id:'pollo-guisado-con-patatas', nombre:'Pollo guisado con patatas', cats:['principales'], region:'Toda España', prep:15, coc:50, rac:4, dif:'Fácil',
+  desc:'Pollo guisado a fuego lento con sofrito, vino blanco y patatas que se empapan de la salsa. Comida de domingo sin complicaciones.',
+  ingr:[{q:1200,u:'g',n:'pollo troceado (muslos y contramuslos)'},{q:600,u:'g',n:'patatas'},{q:1,u:'ud',n:'cebollas',n1:'cebolla'},{q:1,u:'ud',n:'pimientos verdes',n1:'pimiento verde'},{q:3,u:'diente',n:'ajo'},{q:1,u:'ud',n:'tomates maduros',n1:'tomate maduro'},{q:1,u:'cdta',n:'pimentón dulce'},{q:150,u:'ml',n:'vino blanco'},{q:400,u:'ml',n:'caldo de pollo o agua'},{q:1,u:'ud',n:'hojas de laurel',n1:'hoja de laurel'},{q:60,u:'ml',n:'aceite de oliva virgen extra'},{n:'Perejil fresco picado',nota:'para servir'},{n:'Sal y pimienta',nota:'al gusto'}],
+  pasos:['Salpimienta el pollo y dóralo en una cazuela con el aceite a fuego medio-alto, unos 8 minutos, hasta que esté dorado por todos los lados. Sácalo y resérvalo.',
+    'En la misma cazuela, pocha la cebolla, el pimiento y el ajo picados durante 10 minutos a fuego medio.',
+    'Añade el tomate rallado y cocina 5 minutos. Incorpora el pimentón, remueve unos segundos y vierte el vino. Deja que reduzca 2 minutos.',
+    'Devuelve el pollo a la cazuela, añade el laurel y el caldo, tapa y cocina a fuego suave 20 minutos.',
+    'Pela las patatas, cáscalas en trozos medianos y añádelas a la cazuela. Si hace falta, agrega un poco más de caldo para que queden casi cubiertas.',
+    'Cocina 20 minutos más, hasta que las patatas estén tiernas y la salsa haya espesado. Prueba de sal y sirve con perejil picado.'],
+  truco:'Usa muslos y contramuslos en lugar de pechuga: aguantan el guiso sin secarse y dan más sabor a la salsa.' },
+
+{ id:'huevos-rotos', nombre:'Huevos rotos', cats:['principales','vegetariano'], region:'Madrid', prep:10, coc:25, rac:2, dif:'Fácil',
+  desc:'Patatas fritas con pimientos verdes y huevos fritos con puntilla, que se rompen encima al servir para que la yema lo empape todo.',
+  ingr:[{q:500,u:'g',n:'patatas'},{q:4,u:'ud',n:'huevos',n1:'huevo'},{q:2,u:'ud',n:'pimientos verdes italianos',n1:'pimiento verde italiano'},{q:2,u:'diente',n:'ajo'},{q:400,u:'ml',n:'aceite de oliva para freír'},{n:'Sal en escamas',nota:'al gusto'}],
+  pasos:['Pela las patatas y córtalas en bastones o en rodajas finas. Lávalas y sécalas bien.',
+    'Calienta el aceite en una sartén honda a fuego medio y fríe las patatas unos 15 minutos, hasta que estén tiernas.',
+    'Añade los pimientos en tiras y los ajos laminados, sube el fuego y fríe 5 minutos más, hasta que las patatas se doren. Escurre y sala.',
+    'Retira casi todo el aceite, deja un dedo en la sartén y ponlo a fuego fuerte. Fríe los huevos de uno en uno, echándoles aceite por encima con la espumadera para que se forme la puntilla y la yema quede líquida.',
+    'Pon las patatas y los pimientos en una fuente, coloca los huevos encima y rómpelos con un tenedor en la mesa para que la yema empape las patatas.'],
+  truco:'Si comes carne, la versión de bar lleva jamón serrano o chistorra por encima. Añádelos al final, junto con los huevos.' },
+
+{ id:'berenjenas-rellenas', nombre:'Berenjenas rellenas de verduras', cats:['principales','vegetariano'], region:'Toda España', prep:20, coc:45, rac:4, dif:'Fácil',
+  desc:'Berenjenas asadas y rellenas de su propia pulpa, salteada con pimientos, calabacín, cebolla y tomate.',
+  ingr:[{q:2,u:'ud',n:'berenjenas',n1:'berenjena'},{q:1,u:'ud',n:'calabacines',n1:'calabacín'},{q:1,u:'ud',n:'pimientos rojos',n1:'pimiento rojo'},{q:1,u:'ud',n:'pimientos amarillos',n1:'pimiento amarillo'},{q:1,u:'ud',n:'cebollas',n1:'cebolla'},{q:2,u:'diente',n:'ajo'},{q:200,u:'g',n:'tomate triturado'},{q:60,u:'ml',n:'aceite de oliva virgen extra'},{q:1,u:'cdta',n:'orégano seco'},{n:'Sal y pimienta',nota:'al gusto'}],
+  pasos:['Precalienta el horno a 200 °C. Parte las berenjenas por la mitad a lo largo y haz cortes en cuadrícula en la pulpa, sin llegar a la piel.',
+    'Riégalas con un poco de aceite, sálalas y ásalas boca arriba 25 minutos, hasta que la pulpa esté tierna.',
+    'Mientras tanto, pica la cebolla, el ajo, los pimientos y el calabacín en dados pequeños.',
+    'Pocha la cebolla y el ajo en una sartén con el resto del aceite durante 5 minutos. Añade los pimientos y el calabacín y cocina 10 minutos a fuego medio.',
+    'Vacía las berenjenas con una cuchara, dejando un borde de 1 cm. Pica la pulpa y añádela a la sartén con el tomate y el orégano. Cocina 5 minutos y salpimienta.',
+    'Rellena las berenjenas, colócalas en una fuente y hornéalas 15 minutos más. Sírvelas calientes.'],
+  truco:'Para gratinarlas, cubre el relleno con queso rallado antes del último horneado. Siguen siendo vegetarianas, aunque ya no veganas.' },
+
+{ id:'churros-con-chocolate', nombre:'Churros con chocolate', cats:['postres'], region:'Madrid', prep:15, coc:20, rac:4, dif:'Media',
+  desc:'Masa de harina, agua y sal frita en aceite bien caliente, con chocolate espeso para mojar. El desayuno de los domingos y de las mañanas de Año Nuevo.',
+  ingr:[{q:250,u:'g',n:'harina de trigo'},{q:300,u:'ml',n:'agua'},{q:.5,u:'cdta',n:'sal'},{q:750,u:'ml',n:'aceite de girasol para freír'},{q:50,u:'g',n:'azúcar para espolvorear',nota:'opcional'},{q:200,u:'g',n:'chocolate negro para fundir'},{q:500,u:'ml',n:'leche entera'},{q:30,u:'g',n:'azúcar para el chocolate'},{q:20,u:'g',n:'maicena'}],
+  pasos:['Lleva a ebullición el agua con la sal. Apaga el fuego, añade la harina de golpe y remueve con energía con una cuchara de madera hasta obtener una masa lisa y sin grumos.',
+    'Deja templar la masa 5 minutos y métela en una churrera o en una manga pastelera con boquilla de estrella.',
+    'Calienta el aceite en una sartén honda a 180 °C. Forma los churros directamente sobre el aceite, córtalos con unas tijeras y fríelos 2 o 3 minutos por cada lado, hasta que estén dorados.',
+    'Escúrrelos sobre papel absorbente y espolvoréalos con azúcar si te gustan dulces.',
+    'Para el chocolate, disuelve la maicena en un vaso de la leche fría. Calienta el resto de la leche con el azúcar y el chocolate troceado, removiendo hasta que se funda.',
+    'Añade la leche con maicena y cocina a fuego bajo 5 minutos, sin dejar de remover, hasta que el chocolate espese. Sirve los churros recién hechos con una taza de chocolate caliente.'],
+  truco:'Mete la masa en la churrera cuando aún esté templada: si se enfría del todo, cuesta mucho empujarla y los churros se agrietan al freírse.' },
+
+{ id:'tarta-de-queso-vasca', nombre:'Tarta de queso vasca', cats:['postres'], region:'País Vasco', prep:10, coc:45, rac:8, dif:'Fácil', extra:'Necesita al menos 4 horas de nevera antes de cortarla.',
+  desc:'La famosa tarta de queso de San Sebastián: superficie tostada, casi negra, e interior cremoso que tiembla al cortarla. Sin base de galleta.',
+  ingr:[{q:1000,u:'g',n:'queso crema'},{q:300,u:'g',n:'azúcar'},{q:5,u:'ud',n:'huevos',n1:'huevo'},{q:500,u:'ml',n:'nata para montar',nota:'35 % de materia grasa'},{q:20,u:'g',n:'harina de trigo'}],
+  pasos:['Precalienta el horno a 220 °C con calor arriba y abajo. Moja una hoja grande de papel de horno, arrúgala, escúrrela y forra con ella un molde de 24 cm, dejando que sobresalga por los bordes.',
+    'Bate el queso crema con el azúcar hasta que quede liso.',
+    'Añade los huevos de uno en uno, batiendo a velocidad baja solo hasta integrarlos.',
+    'Incorpora la nata y, por último, la harina tamizada. Mezcla sin batir en exceso para que no entre aire.',
+    'Vierte la mezcla en el molde y hornea de 40 a 45 minutos, hasta que la superficie esté muy tostada y el centro todavía tiemble al mover el molde.',
+    'Déjala enfriar a temperatura ambiente y después en la nevera al menos 4 horas. Sácala 30 minutos antes de servir.'],
+  truco:'No te asustes por el color: la superficie casi quemada es la gracia de esta tarta y le da un punto amargo que equilibra el dulzor.' },
+
+{ id:'magdalenas', nombre:'Magdalenas caseras', cats:['postres'], region:'Toda España', prep:15, coc:18, rac:6, rinde:'Salen unas 12 magdalenas', dif:'Fácil', extra:'La masa reposa 1 hora en la nevera antes de hornear.',
+  desc:'Esponjosas, con su copete alto y aroma a limón. Las de toda la vida, para mojar en el café con leche.',
+  ingr:[{q:3,u:'ud',n:'huevos',n1:'huevo'},{q:150,u:'g',n:'azúcar'},{q:150,u:'ml',n:'aceite de girasol'},{q:100,u:'ml',n:'leche entera'},{q:200,u:'g',n:'harina de trigo'},{q:8,u:'g',n:'levadura química'},{q:1,u:'ud',n:'ralladuras de limón',n1:'ralladura de limón'},{n:'Sal',nota:'una pizca'},{q:30,u:'g',n:'azúcar para espolvorear'}],
+  pasos:['Bate los huevos con el azúcar unos 5 minutos, hasta que la mezcla blanquee y doble su volumen.',
+    'Añade el aceite en un hilo fino y después la leche y la ralladura de limón, sin dejar de batir a velocidad baja.',
+    'Tamiza la harina con la levadura y la sal, e incorpórala con una espátula y movimientos envolventes.',
+    'Tapa la masa y déjala reposar 1 hora en la nevera.',
+    'Precalienta el horno a 220 °C. Llena las cápsulas de papel hasta tres cuartos de su capacidad y espolvorea un poco de azúcar por encima.',
+    'Baja el horno a 200 °C al meter las magdalenas y hornéalas de 15 a 18 minutos, hasta que estén doradas y un palillo salga limpio.'],
+  truco:'El contraste entre la masa fría y el horno muy caliente es lo que las hace subir y formar el copete.' }
 ];
 
+const CORREO = 'aminelmadir@gmail.com';
 const DESTACADAS = ['tortilla-de-patatas','paella-valenciana','gazpacho-andaluz','croquetas-de-jamon','pulpo-a-la-gallega','crema-catalana'];
 const PORTADA_CAT = {entrantes:'croquetas-de-jamon',principales:'paella-valenciana',postres:'crema-catalana',vegetariano:'pisto-manchego'};
 const byId = Object.fromEntries(RECETAS.map(r=>[r.id,r]));
 
 /* ---------- Fotos ---------- */
 // Fotos de Pexels (licencia de Pexels: uso gratuito, sin atribución obligatoria), publicadas junto a la página en fotos/
-const PEXELS = {'tortilla-de-patatas':20934174,'paella-valenciana':24906297,'gazpacho-andaluz':16698356,'croquetas-de-jamon':21327952,'pimientos-de-padron':38681379,'pan-con-tomate':3793871,'pulpo-a-la-gallega':36393691,'fabada-asturiana':19870150,'pisto-manchego':16699418,'espinacas-con-garbanzos':12765333,'escalivada':9433006,'crema-catalana':36101016,'arroz-con-leche':37825038,'torrijas':10066118,'flan-de-huevo':14665242,'tarta-de-santiago':9074543};
+const PEXELS = {'tortilla-de-patatas':20934174,'paella-valenciana':24906297,'gazpacho-andaluz':16698356,'croquetas-de-jamon':21327952,'pimientos-de-padron':38681379,'pan-con-tomate':3793871,'pulpo-a-la-gallega':36393691,'fabada-asturiana':19870150,'pisto-manchego':16699418,'espinacas-con-garbanzos':12765333,'escalivada':9433006,'crema-catalana':36101016,'arroz-con-leche':37825038,'torrijas':10066118,'flan-de-huevo':14665242,'tarta-de-santiago':9074543,
+  'patatas-bravas':28490824,'gambas-al-ajillo':16273761,'salmorejo-cordobes':12675815,'ensaladilla-rusa':21625304,'champinones-al-ajillo':5718131,'albondigas-en-salsa':36958915,'lentejas-con-verduras':35646479,'pollo-guisado-con-patatas':35156470,'huevos-rotos':27905915,'berenjenas-rellenas':15735622,'churros-con-chocolate':6310077,'tarta-de-queso-vasca':6168429,'magdalenas':18732595};
 const mias={};
 RECETAS.forEach(r=>{try{const u=localStorage.getItem('alacena-foto-'+r.id);if(u)mias[r.id]=u}catch(e){}});
 function foto(r,k){if(mias[r.id])return mias[r.id];return `fotos/${r.id}${k==='det'||k==='hero'?'':'-p'}.jpg`}
@@ -498,6 +677,7 @@ function foto(r,k){if(mias[r.id])return mias[r.id];return `fotos/${r.id}${k==='d
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const norm=s=>s.normalize('NFD').replace(/[̀-ͯ]/g,'').toLowerCase();
 const total=r=>r.prep+r.coc;
+const nRecetas=n=>n===1?'1 receta':n+' recetas';
 function fmtT(m){if(m<60)return m+' min';const h=Math.floor(m/60),r=m%60;return h+' h'+(r?' '+r+' min':'')}
 const UNI={cda:['cucharada','cucharadas'],cdta:['cucharadita','cucharaditas'],diente:['diente','dientes'],rama:['rama','ramas'],reb:['rebanada','rebanadas']};
 function num(v){
@@ -553,22 +733,29 @@ function vInicio(){
       <p class="eyebrow">Recetario casero</p>
       <h1>La cocina de casa, explicada paso a paso</h1>
       <p class="intro">Recetas españolas de toda la vida, con cantidades exactas, tiempos reales y los trucos que pasan de una generación a otra. Para cocinar entre semana y para los domingos largos.</p>
-      <div class="acciones"><a class="btn" href="#recetas">Ver todas las recetas</a><a class="btn btn-sec" href="#contacto">Envíanos tu receta</a></div>
+      <div class="acciones"><a class="btn" href="#recetas">Ver todas las recetas</a><a class="btn btn-sec" href="#contacto">Envíame tu receta</a></div>
       <ul class="datos"><li><b>${RECETAS.length}</b>recetas</li><li><b>${regiones.length}</b>regiones</li><li><b>4</b>categorías</li></ul>
     </div>
     <figure class="hero-foto">
-      <img src="${foto(t,'hero')}" alt="Tortilla de patatas dorada recién hecha" width="1600" height="1067">
+      <img src="${foto(t,'hero')}" alt="Tortilla de patatas dorada recién hecha" width="1400" height="933" fetchpriority="high" decoding="async">
       <a class="semana" href="#receta-${t.id}"><span class="eyebrow">Receta de la semana</span><b>${t.nombre}</b><span>${fmtT(total(t))} · ${t.rac} raciones · ${t.dif}</span></a>
     </figure>
   </section>
   ${banda}
   <section class="wrap sec">
     <div class="sec-head"><div><h2>Elige por categoría</h2><p>Del aperitivo al postre, con una sección aparte para quien no come carne ni pescado.</p></div></div>
-    <div class="cats">${Object.keys(CATS).map(c=>{const n=RECETAS.filter(r=>r.cats.includes(c)).length;return `<a class="cat" href="#${c}"><img src="${foto(byId[PORTADA_CAT[c]],'tile')}" alt="" width="760" height="570" loading="lazy"><div><h3>${CATS[c].nombre}</h3><span>${n} recetas</span></div></a>`}).join('')}</div>
+    <div class="cats">${Object.keys(CATS).map(c=>{const n=RECETAS.filter(r=>r.cats.includes(c)).length;return `<a class="cat" href="#${c}"><img src="${foto(byId[PORTADA_CAT[c]],'tile')}" alt="" width="760" height="570" loading="lazy"><div><h3>${CATS[c].nombre}</h3><span>${nRecetas(n)}</span></div></a>`}).join('')}</div>
   </section>
   <section class="wrap sec" style="padding-top:0">
-    <div class="sec-head"><div><h2>Recetas destacadas</h2><p>Las más cocinadas este mes. Si empiezas por una, que sea la tortilla.</p></div><a class="enlace" href="#recetas">Ver las ${RECETAS.length} recetas →</a></div>
+    <div class="sec-head"><div><h2>Recetas destacadas</h2><p>Los imprescindibles de la cocina española. Si empiezas por uno, que sea la tortilla.</p></div><a class="enlace" href="#recetas">Ver las ${RECETAS.length} recetas →</a></div>
     <div class="grid">${DESTACADAS.map(id=>tarjeta(byId[id],true)).join('')}</div>
+  </section>
+  <section class="wrap sec" style="padding-top:0">
+    <div class="presenta">
+      <div><p class="eyebrow">Sobre mí</p><h2>Quién está detrás de La Alacena</h2>
+        <p class="muted">Tengo 19 años, muchas ganas de innovar y de aprender, y un objetivo: que la gastronomía española, una de las mejores del mundo, llegue al mayor número de personas posible.</p></div>
+      <a class="btn btn-sec" href="#sobre-mi">Conóceme</a>
+    </div>
   </section>
   <section class="wrap sec" style="padding-top:0">
     <div class="sec-head"><div><h2>Por regiones</h2><p>Cada plato con su origen. Toca una región para ver sus recetas.</p></div></div>
@@ -585,7 +772,7 @@ function vLista(cat){
       <nav class="chips" aria-label="Categorías"><a class="chip" href="#recetas" ${!cat?'aria-current="page"':''}>Todas <small>${RECETAS.length}</small></a>${Object.keys(CATS).map(c=>`<a class="chip" href="#${c}" ${cat===c?'aria-current="page"':''}>${CATS[c].nombre} <small>${RECETAS.filter(r=>r.cats.includes(c)).length}</small></a>`).join('')}</nav>
     </header>
     <div class="barra">
-      <div class="grupo" role="group" aria-label="Tiempo total"><label>Tiempo</label>${T.map(([v,l])=>`<button type="button" class="chip" data-acc="tiempo" data-v="${v}" aria-pressed="${estado.tiempo===v}">${l}</button>`).join('')}</div>
+      <div class="grupo" role="group" aria-label="Tiempo total"><span class="etq" aria-hidden="true">Tiempo</span>${T.map(([v,l])=>`<button type="button" class="chip" data-acc="tiempo" data-v="${v}" aria-pressed="${estado.tiempo===v}">${l}</button>`).join('')}</div>
       <div class="grupo"><label for="orden">Ordenar</label><select id="orden"><option value="destacadas">Destacadas</option><option value="rapidas">Más rápidas primero</option><option value="az">De la A a la Z</option></select></div>
     </div>
     <p class="recuento" id="recuento"></p>
@@ -599,8 +786,8 @@ function pintarLista(cat){
   if(estado.orden==='rapidas')l=[...l].sort((a,b)=>total(a)-total(b));
   if(estado.orden==='az')l=[...l].sort((a,b)=>a.nombre.localeCompare(b.nombre,'es'));
   if(estado.orden==='destacadas')l=[...l].sort((a,b)=>(DESTACADAS.includes(b.id)?1:0)-(DESTACADAS.includes(a.id)?1:0));
-  document.getElementById('recuento').textContent=l.length===1?'1 receta':l.length+' recetas';
-  document.getElementById('lista').innerHTML=l.length?`<div class="grid">${l.map(r=>tarjeta(r,true)).join('')}</div>`:`<div class="vacio-lista">No hay recetas de este tipo con ese tiempo. Prueba con otro filtro de tiempo.</div>`;
+  document.getElementById('recuento').textContent=nRecetas(l.length);
+  document.getElementById('lista').innerHTML=l.length?`<div class="grid">${l.map(r=>tarjeta(r,true)).join('')}</div>`:`<div class="vacio-lista">No hay recetas de esta categoría que se hagan en ese tiempo. Prueba con otro filtro.</div>`;
   const o=document.getElementById('orden');if(o)o.value=estado.orden;
 }
 
@@ -624,7 +811,7 @@ function vReceta(r){
     </dl>
     ${r.extra?`<p class="aviso">${esc(r.extra)}</p>`:''}
     <figure class="r-foto">
-      <img src="${propia?mias[r.id]:foto(r,'det')}" alt="${esc(r.nombre)}${propia?', foto subida por ti':''}" width="1600" height="1067">
+      <img src="${propia?mias[r.id]:foto(r,'det')}" alt="${esc(r.nombre)}${propia?', foto subida por ti':''}" width="1400" height="933" fetchpriority="high" decoding="async">
       <figcaption><span>${propia?'Tu foto de este plato. Se guarda solo en este navegador.':`Foto de <a href="https://www.pexels.com/photo/${PEXELS[r.id]}/" target="_blank" rel="noopener">Pexels</a>. Puedes poner tu propia foto.`}</span>
         <span class="botones"><label class="btn btn-sec btn-peq" for="subir">${propia?'Cambiar foto':'Subir mi foto'}</label><input class="oculto" type="file" id="subir" accept="image/*">${propia?'<button type="button" class="btn btn-sec btn-peq" data-acc="foto-quitar">Quitar mi foto</button>':''}</span>
       </figcaption>
@@ -650,6 +837,9 @@ function vReceta(r){
 
 function buscar(q){
   const ws=norm(q).trim().split(/\s+/).filter(Boolean);if(!ws.length)return [];
+  // Si se busca exactamente una región (los botones de «Por regiones»), solo sus recetas, para que el número coincida
+  const reg=RECETAS.find(r=>norm(r.region)===ws.join(' '));
+  if(reg)return RECETAS.filter(r=>r.region===reg.region);
   return RECETAS.map(r=>{
     const nom=norm(r.nombre),hay=norm([r.nombre,r.region,r.desc,r.cats.map(c=>CATS[c].nombre).join(' '),r.ingr.map(i=>i.n).join(' ')].join(' '));
     if(!ws.every(w=>hay.includes(w)))return null;
@@ -669,7 +859,7 @@ function vBuscar(){
 function pintarBusqueda(){
   const q=estado.q.trim(),l=buscar(q);
   document.getElementById('t-buscar').textContent=q?`Resultados para «${q}»`:'Busca una receta';
-  document.getElementById('recuento').textContent=q?(l.length===1?'1 receta':l.length+' recetas'):'';
+  document.getElementById('recuento').textContent=q?nRecetas(l.length):'';
   const sug=['huevo','arroz','tomate','Galicia','almendra'];
   document.getElementById('res').innerHTML=!q
     ?`<div class="vacio-lista">Escribe un plato, un ingrediente o una región. Por ejemplo: <div class="chips" style="justify-content:center;margin-top:14px">${sug.map(s=>`<button type="button" class="chip" data-acc="sugerir" data-v="${s}">${s}</button>`).join('')}</div></div>`
@@ -680,14 +870,14 @@ function pintarBusqueda(){
 function vContacto(){
   const e=estado.enviado;
   return `<div class="wrap">
-    <header class="cabecera"><p class="eyebrow">Contacto</p><h1>Escríbenos</h1><p class="lead">¿Una duda con una receta, la de tu familia para compartir o una propuesta? Te leemos.</p></header>
+    <header class="cabecera"><p class="eyebrow">Contacto</p><h1>Escríbeme</h1><p class="lead">¿Tienes una duda con una receta, quieres compartir la de tu familia o tienes una propuesta? Me encantará leerte.</p></header>
     <div class="contacto">
       ${e?`<div class="listo" role="status">
-        <p class="eyebrow">Mensaje preparado</p><h2>Gracias, ${esc(e.nombre)}</h2>
-        <p>Este es el mensaje que has escrito sobre «${esc(e.asunto)}»:</p>
+        <p class="eyebrow">Mensaje listo</p><h2>Gracias, ${esc(e.nombre)}</h2>
+        <p>He abierto tu aplicación de correo con este mensaje sobre «${esc(e.asunto)}». Solo te queda pulsar <b>Enviar</b>:</p>
         <blockquote>${esc(e.mensaje)}</blockquote>
-        <p class="muted">Esta web es una vista previa y el formulario todavía no está conectado a un buzón, así que el mensaje no se ha enviado. Si quieres escribirnos ya, copia nuestra dirección de correo.</p>
-        <div><button type="button" class="btn btn-sec" data-acc="otro">Escribir otro mensaje</button></div>
+        <p class="muted">Si no se ha abierto ninguna aplicación, copia mi dirección de correo y escríbeme desde tu correo habitual.</p>
+        <div class="acciones" style="display:flex;flex-wrap:wrap;gap:10px"><a class="btn" href="${esc(e.enlace)}">Abrir el correo otra vez</a><button type="button" class="btn btn-sec" data-acc="otro">Escribir otro mensaje</button></div>
       </div>`
       :`<form class="form" id="form-contacto" novalidate>
         <div class="fila">
@@ -695,17 +885,45 @@ function vContacto(){
           <div class="campo"><label for="c-email">Correo electrónico</label><input id="c-email" name="email" type="email" autocomplete="email" placeholder="carmen@ejemplo.com"><span class="error" id="e-email"></span></div>
         </div>
         <div class="campo"><label for="c-asunto">Motivo</label><select id="c-asunto" name="asunto"><option>Duda sobre una receta</option><option>Quiero compartir mi receta</option><option>Colaboraciones</option><option>Otro</option></select></div>
-        <div class="campo"><label for="c-mensaje">Mensaje</label><textarea id="c-mensaje" name="mensaje" placeholder="Cuéntanos qué receta has hecho, qué te ha pasado o qué te gustaría ver por aquí."></textarea><span class="error" id="e-mensaje"></span></div>
-        <div><button class="btn" type="submit">Enviar mensaje</button></div>
+        <div class="campo"><label for="c-mensaje">Mensaje</label><textarea id="c-mensaje" name="mensaje" placeholder="Cuéntame qué receta has hecho, qué te ha pasado o qué te gustaría ver por aquí."></textarea><span class="error" id="e-mensaje"></span></div>
+        <div><button class="btn" type="submit">Enviar mensaje</button><p class="muted" style="font-size:.86rem;margin-top:10px">Al pulsar, se abrirá tu aplicación de correo con el mensaje ya escrito.</p></div>
       </form>`}
       <aside class="info">
-        <div><h2>Correo</h2><p class="muted">Respondemos en 2 o 3 días laborables.</p>
-          <div class="correo"><code id="correo">aminelmadir@gmail.com</code><button type="button" class="btn btn-sec btn-peq" data-acc="copiar">Copiar</button></div></div>
-        <div><h2>¿Nos mandas tu receta?</h2><p class="muted">Cuéntanos de dónde viene, quién te la enseñó y cuántas raciones salen. Si tienes una foto del plato, mejor.</p></div>
-        <div><h2>Dudas con una receta</h2><p class="muted">Dinos qué receta era, qué ingredientes usaste y en qué paso se torció. Con eso solemos encontrar el fallo.</p></div>
+        <div><h2>Correo</h2><p class="muted">Leo todos los mensajes e intento responder en pocos días.</p>
+          <div class="correo"><code id="correo">${CORREO}</code><button type="button" class="btn btn-sec btn-peq" data-acc="copiar">Copiar</button></div></div>
+        <div><h2>¿Me mandas tu receta?</h2><p class="muted">Cuéntame de dónde viene, quién te la enseñó y cuántas raciones salen. Si tienes una foto del plato, mejor.</p></div>
+        <div><h2>Dudas con una receta</h2><p class="muted">Dime qué receta era, qué ingredientes usaste y en qué paso se torció. Con eso suele ser fácil encontrar el fallo.</p></div>
       </aside>
     </div>
   </div><div style="height:40px"></div>`;
+}
+
+function vSobre(){
+  const regiones=new Set(RECETAS.map(r=>r.region)).size;
+  const veg=RECETAS.filter(r=>r.cats.includes('vegetariano')).length;
+  const mos=['paella-valenciana','salmorejo-cordobes','churros-con-chocolate','pulpo-a-la-gallega'].map(id=>byId[id]);
+  return `<div class="wrap">
+    <header class="cabecera"><p class="eyebrow">Sobre mí</p><h1>Cocinar para compartir lo nuestro</h1><p class="lead">Detrás de La Alacena hay una persona joven con muchas ganas de aprender y de dar a conocer la cocina española.</p></header>
+    <div class="sobre">
+      <div class="texto">
+        <p>Tengo 19 años y muchas ganas de innovar y de aprender. Me encanta la cocina española y creo, sin exagerar, que es una de las mejores del mundo: cada región tiene sus platos, sus productos y sus historias, y casi todo nace en las cocinas de casa.</p>
+        <p>He creado esta web con una idea muy sencilla: dar a conocer la gastronomía española al mayor número de personas posible. Por eso cada receta tiene las cantidades exactas, el tiempo real que lleva y los trucos que marcan la diferencia, para que cualquiera pueda prepararla, viva donde viva.</p>
+        <p>La Alacena también es mi forma de aprender. Cada receta me obliga a probar, a equivocarme y a volver a intentarlo, y cada mensaje que recibo me ayuda a mejorar.</p>
+        <h2>Lo que encontrarás aquí</h2>
+        <ul class="claves">
+          <li><b>${RECETAS.length}</b><span>recetas de ${regiones} regiones distintas, de los entrantes a los postres.</span></li>
+          <li><b>${veg}</b><span>recetas vegetarianas, para que nadie se quede sin probar lo nuestro.</span></li>
+          <li><b>1</b><span>forma de explicarlas: pasos numerados, raciones ajustables y el truco de casa al final.</span></li>
+        </ul>
+        <p>Si tienes una receta familiar, una duda o una idea para la web, escríbeme. Me encantará leerte.</p>
+        <div class="acciones" style="display:flex;flex-wrap:wrap;gap:12px"><a class="btn" href="#contacto">Escríbeme</a><a class="btn btn-sec" href="#recetas">Ver las recetas</a></div>
+      </div>
+      <figure class="mosaico">
+        ${mos.map(r=>`<a href="#receta-${r.id}"><img src="${foto(r,'card')}" alt="${esc(r.nombre)}" width="760" height="570" loading="lazy" decoding="async"></a>`).join('')}
+        <figcaption>Paella, salmorejo, churros y pulpo: cuatro regiones, cuatro formas de entender la cocina.</figcaption>
+      </figure>
+    </div>
+  </div>`;
 }
 
 function v404(){return `<div class="wrap cabecera" style="padding-block:72px"><p class="eyebrow">Página no encontrada</p><h1>Esta receta no está en la alacena</h1><p class="lead">Puede que el enlace esté mal escrito. Vuelve al inicio o busca la receta por su nombre.</p><div><a class="btn" href="#inicio">Volver al inicio</a></div></div>`}
@@ -713,13 +931,15 @@ function v404(){return `<div class="wrap cabecera" style="padding-block:72px"><p
 /* ---------- Router ---------- */
 const app=document.getElementById('app');
 function ruta(){
-  const h=(location.hash||'#inicio').slice(1)||'inicio';let nav='';
+  const h=(location.hash||'#inicio').slice(1)||'inicio';let nav='',tit='';
   if(h==='inicio'){app.innerHTML=vInicio();nav='inicio'}
-  else if(h==='recetas'||CATS[h]){const c=CATS[h]?h:null;app.innerHTML=vLista(c);pintarLista(c);nav='recetas'}
-  else if(h.startsWith('receta-')&&byId[h.slice(7)]){app.innerHTML=vReceta(byId[h.slice(7)]);nav='recetas'}
-  else if(h==='buscar'){app.innerHTML=vBuscar();pintarBusqueda()}
-  else if(h==='contacto'){app.innerHTML=vContacto();nav='contacto'}
-  else app.innerHTML=v404();
+  else if(h==='recetas'||CATS[h]){const c=CATS[h]?h:null;app.innerHTML=vLista(c);pintarLista(c);nav='recetas';tit=c?CATS[c].nombre:'Todas las recetas'}
+  else if(h.startsWith('receta-')&&byId[h.slice(7)]){const r=byId[h.slice(7)];app.innerHTML=vReceta(r);nav='recetas';tit=r.nombre}
+  else if(h==='buscar'){app.innerHTML=vBuscar();pintarBusqueda();tit='Buscar'}
+  else if(h==='sobre-mi'){app.innerHTML=vSobre();nav='sobre-mi';tit='Sobre mí'}
+  else if(h==='contacto'){app.innerHTML=vContacto();nav='contacto';tit='Contacto'}
+  else{app.innerHTML=v404();tit='Página no encontrada'}
+  document.title=tit?`${tit} · La Alacena`:'La Alacena · Recetas españolas caseras';
   document.querySelectorAll('[data-nav]').forEach(a=>{if(a.dataset.nav===nav)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')});
 }
 function irA(h){cerrarSug();if(location.hash==='#'+h){ruta();window.scrollTo(0,0)}else location.hash=h}
@@ -778,7 +998,11 @@ document.addEventListener('submit',e=>{
   marca('email',/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v('email'))?'':'Escribe un correo válido, por ejemplo nombre@dominio.com.');
   marca('mensaje',v('mensaje').length>=10?'':'Cuéntanos algo más: el mensaje necesita al menos 10 caracteres.');
   if(!ok){f.querySelector('[aria-invalid="true"]').focus();return}
-  estado.enviado={nombre:v('nombre'),asunto:f.elements.asunto.value,mensaje:v('mensaje')};ruta();
+  const asunto=f.elements.asunto.value;
+  const cuerpo=`${v('mensaje')}\n\n${v('nombre')} (${v('email')})`;
+  const enlace=`mailto:${CORREO}?subject=${encodeURIComponent('La Alacena: '+asunto)}&body=${encodeURIComponent(cuerpo)}`;
+  estado.enviado={nombre:v('nombre'),asunto,mensaje:v('mensaje'),enlace};ruta();window.scrollTo(0,0);
+  location.href=enlace;
 });
 </script>
 </body>

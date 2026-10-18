@@ -2,7 +2,7 @@
 
 Página web de recetas de cocina españolas y caseras: **La Alacena**.
 
-Web de recetas españolas caseras: inicio con recetas destacadas, categorías (entrantes, platos principales, postres y vegetariano), página de cada receta con ingredientes ajustables por raciones y pasos numerados, buscador y contacto.
+Web de recetas españolas caseras: inicio con recetas destacadas, categorías (entrantes, platos principales, postres y vegetariano), página de cada receta con ingredientes ajustables por raciones y pasos numerados, buscador, sección «Sobre mí» y contacto. Tiene 29 recetas.
 
 Web publicada: https://bruceweyne07.github.io/
 
@@ -19,4 +19,8 @@ Las fotos son de [Pexels](https://www.pexels.com) y se usan bajo la [licencia de
 
 ## Formulario de contacto
 
-El formulario valida los campos pero no envía mensajes. Para recibirlos hay que conectarlo a un servicio como Formspree o Netlify Forms.
+El formulario valida los campos y abre la aplicación de correo del visitante con el mensaje ya escrito y dirigido a aminelmadir@gmail.com. No usa ningún servidor ni servicio externo.
+
+## Publicidad
+
+`ads.txt` declara la cuenta de Google AdSense que puede mostrar anuncios en la web.
